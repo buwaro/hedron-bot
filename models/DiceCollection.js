@@ -13,9 +13,9 @@ class DiceCollection {
             if (diceRegex.test(diceString))
                 var [amount, type] = diceRegex.exec(diceString).slice(1,3)
             else {
-                throw("Cannot roll a " + diceString + ",\n Pleasetry something like: 1d6")
+                throw("Can't roll a " + diceString + ",\n Please try something like: 1d6")
             }
-            
+
             var dice = new Dice(type)
             this.addDice(amount, dice)
         }
