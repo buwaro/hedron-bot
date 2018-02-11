@@ -10,10 +10,14 @@ class DiceCollection {
 
     addDices(diceStrings) {
         for (var diceString of diceStrings) {
-            if (diceRegex.test(diceString))
+            if (diceRegex.test(diceString)) {
                 var [amount, type] = diceRegex.exec(diceString).slice(1,3)
+            }
             else {
                 throw("Can't roll a " + diceString + ",\n Please try something like: 1d6")
+            }
+            if (amount == "") {
+                amount = 1
             }
 
             var dice = new Dice(type)
