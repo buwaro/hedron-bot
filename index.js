@@ -1,8 +1,8 @@
 const Telegraf = require('telegraf')
-const { reply } = Telegraf
+const bot = new Telegraf(process.env.BOT_TOKEN)
+
 const Dice = require("./models/Dice")
 const DiceCollection = require("./models/DiceCollection")
-const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.command('roll', (ctx) => {
     try {
@@ -20,10 +20,6 @@ bot.command('roll', (ctx) => {
     catch (error) {
         ctx.reply(error)
     }
-})
-
-bot.catch((error) => {
-    console.log(error)
 })
 
 bot.startPolling()
