@@ -20,14 +20,14 @@ class DiceCollection {
                     amount = 1
                 }
                 else if (amount < 0) {
-                    throw("You can't roll a negative amount of dice")
+                    throw("Can't roll a negative amount of dice")
                 }
 
                 if (isNaN(type)) {
                     throw("The amount of sides is not a number")
                 }
                 else if (type <= 1) {
-                    throw("You can't roll a dice with less than 2 sides")
+                    throw("Can't roll a dice with less than 2 sides")
                 }
             }
             else {
