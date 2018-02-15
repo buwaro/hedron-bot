@@ -11,7 +11,8 @@ bot.command('roll', (ctx) => {
             result = new Dice(6).roll()
         }
         else {
-        var diceCollection = new DiceCollection(params)
+        var diceCollection = new DiceCollection()
+        diceCollection.addDices(params)
         var result = diceCollection.rollDices().join(", ")
         }
 

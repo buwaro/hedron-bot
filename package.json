@@ -1,10 +1,10 @@
 {
   "name": "HedronBot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a telegram bot that can throw dice",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tape -r ./tests/test_setup.js tests/**/*.js",
     "start": "node index.js",
     "debug": "node inspect index.js"
   },
@@ -17,6 +17,7 @@
   "author": "Furexa (buwaro)",
   "license": "ISC",
   "dependencies": {
+    "tape": "^4.8.0",
     "telegraf": "^3.17.7"
   }
 }
