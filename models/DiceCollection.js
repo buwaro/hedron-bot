@@ -5,6 +5,7 @@ class DiceCollection {
 
     constructor() {
         this.dices = []
+        this.maxDice = 100
     }
 
     addDices(diceStrings) {
@@ -36,6 +37,10 @@ class DiceCollection {
             var dice = new Dice(type)
             this.addDice(amount, dice)
         }
+
+        if (this.totalAmount() > this.maxDice) {
+            throw("Can't roll more than " + this.maxDice + " dice")
+        }
     }
 
     addDice(amount, dice) {
@@ -51,6 +56,15 @@ class DiceCollection {
             for (i = 0; i < amount; i++) {
                 result.push(dice.roll())
             }
+        }
+
+        return result
+    }
+
+    totalAmount() {
+        var result = 0
+        for(var [dice, amount] of this.dices) {
+            result += parseInt(amount)
         }
 
         return result
