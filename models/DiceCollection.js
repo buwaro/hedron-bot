@@ -6,6 +6,7 @@ class DiceCollection {
     constructor() {
         this.dices = []
         this.maxDice = 100
+        this.maxSides = 100
     }
 
     addDices(diceStrings) {
@@ -29,6 +30,10 @@ class DiceCollection {
                 else if (type <= 1) {
                     throw("Can't roll a dice with less than 2 sides")
                 }
+                else if (type > this.maxSides) {
+                    throw("Can't roll a dice with more than " + this.maxSides + " sides")
+                }
+
             }
             else {
                 throw("Can't roll a " + diceString + ",\nPlease try something like: 1d6")

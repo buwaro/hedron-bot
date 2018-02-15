@@ -78,3 +78,14 @@ test("Throws an error when the maximum amount of dice is exceeded", function (t)
         t.is(e, "Can't roll more than " + d2.maxDice + " dice")
     }
 })
+
+test("Throws an error when the maximum amount of sides is exceeded", function (t) {
+    t.plan(1);
+    const d = new DiceCollection()
+    try {
+        d.addDices(["1d101"])
+    }
+    catch(e){
+        t.is(e, "Can't roll a dice with more than " + d.maxSides + " sides")
+    }
+})
