@@ -3,9 +3,8 @@ const Dice = require("./dice")
 
 class DiceCollection {
 
-    constructor(diceStrings) {
+    constructor() {
         this.dices = []
-        this.addDices(diceStrings)
     }
 
     addDices(diceStrings) {
