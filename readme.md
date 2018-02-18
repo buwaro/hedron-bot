@@ -29,6 +29,9 @@ More info at http://pm2.keymetrics.io/docs/usage/quick-start/
     > **Note: You need to reload `~/.profile` for the changes to take effect
     > you can check if the variables are added with `printenv`
 
+- **Add node symlink:** `ln -s /usr/bin/nodejs /usr/bin/node`
+
+
 ### Setup git remote
 Using git to deploy our app to production.
 If you need more info, you can follow the tutorial at https://gist.github.com/noelboss/3fe13927025b89757f8fb12e9066f2fa
