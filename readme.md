@@ -15,8 +15,8 @@
 #### Ubuntu
 - **Update apt:** `sudo apt-get update`
 - **Install nodejs:** 
- - - `curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -`
- - - `sudo apt-get install -y nodejs`
+  - `curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -`
+  - `sudo apt-get install -y nodejs`
 - **Install npm:** `sudo apt-get install npm`
 
 Using pm2 to manage nodejs app processes.
