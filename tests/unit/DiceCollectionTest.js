@@ -1,4 +1,4 @@
-const DiceCollection = require("../../models/DiceCollection")
+const DiceCollection = require(__basedir + "/models/DiceCollection")
 
 test('Throws an error when the given string is not a diceString', function (t) {
     t.plan(1);
@@ -87,5 +87,27 @@ test("Throws an error when the maximum amount of sides is exceeded", function (t
     }
     catch(e){
         t.is(e, "Can't roll a dice with more than " + d.maxSides + " sides")
+    }
+})
+
+test("Throws an error when the amount of dice is a decimal number", function (t) {
+    t.plan(1);
+    const d = new DiceCollection()
+    try {
+        d.addDices(["1.5d10"])
+    }
+    catch(e){
+        t.is(e, "the ammount of dice can't be a decimal number")
+    }
+})
+
+test("Throws an error when the amount of sides is a decimal number", function (t) {
+    t.plan(1);
+    const d = new DiceCollection()
+    try {
+        d.addDices(["1d5.5"])
+    }
+    catch(e){
+        t.is(e, "the ammount of sides can't be a decimal number")
     }
 })

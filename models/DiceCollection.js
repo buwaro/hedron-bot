@@ -23,6 +23,9 @@ class DiceCollection {
                 else if (amount < 0) {
                     throw("Can't roll a negative amount of dice")
                 }
+                else if (amount % 1 != 0) {
+                    throw("the ammount of dice can't be a decimal number")
+                }
 
                 if (isNaN(type)) {
                     throw("The amount of sides is not a number")
@@ -32,6 +35,9 @@ class DiceCollection {
                 }
                 else if (type > this.maxSides) {
                     throw("Can't roll a dice with more than " + this.maxSides + " sides")
+                }
+                else if (type % 1 != 0) {
+                    throw("the ammount of sides can't be a decimal number")
                 }
 
             }
