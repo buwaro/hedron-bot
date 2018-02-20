@@ -14,7 +14,9 @@
 ### Setup nodejs
 #### Ubuntu
 - **Update apt:** `sudo apt-get update`
-- **Install nodejs:** `sudo apt-get install nodejs`
+- **Install nodejs:** 
+ - `curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -`
+ - `sudo apt-get install -y nodejs`
 - **Install npm:** `sudo apt-get install npm`
 
 Using pm2 to manage nodejs app processes.
@@ -54,6 +56,7 @@ If you need more info, you can follow the tutorial at https://gist.github.com/no
             echo "Ref $ref received. Deploying ${BRANCH} branch to production..."
             git --work-tree=$TRAGET --git-dir=$GIT_DIR checkout -f
 
+            npm --prefix /home/deploy/apps/hedron install
             pm2 stop hedron
             pm2 start ~/apps/hedron/index.js --name hedron
         else
@@ -61,6 +64,7 @@ If you need more info, you can follow the tutorial at https://gist.github.com/no
         fi
     done
     ```
+- **Make the file executable:** `chmod +x ~/hedron.git/hooks/post-receive`
 - **Add the production remote to git in the project:** `git remote add production "user@example.com:hedron.git"`
 
 ## Deploy to production
