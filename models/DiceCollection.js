@@ -1,5 +1,5 @@
 const diceRegex = /(.*)d(.*)/i
-const Dice = require("./dice")
+const Dice = require(__basedir + "/models/dice")
 
 class DiceCollection {
 

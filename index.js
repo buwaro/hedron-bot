@@ -1,8 +1,11 @@
+// Set the project folder location
+global.__basedir = __dirname;
+
 const Telegraf = require('telegraf')
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
-const Dice = require("./models/Dice")
-const DiceCollection = require("./models/DiceCollection")
+const Dice = require(__basedir + "/models/Dice")
+const DiceCollection = require(__basedir + "/models/DiceCollection")
 
 bot.command('roll', (ctx) => {
     try {
