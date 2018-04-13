@@ -42,7 +42,7 @@ test("Throws an error when the amount of dice is negative", function (t) {
         d.addDices([diceString])
     }
     catch(e){
-        t.is(e, "Can't roll a negative amount of dice")
+        t.is(e, "The ammount of dice has to be higher than 0")
     }
 })
 

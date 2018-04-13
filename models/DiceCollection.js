@@ -28,8 +28,8 @@ class DiceCollection {
                 else if (amount.length == 0) {
                     amount = 1
                 }
-                else if (amount < 0) {
-                    throw("Can't roll a negative amount of dice")
+                else if (amount <= 0) {
+                    throw("The ammount of dice has to be higher than 0")
                 }
                 else if (amount % 1 != 0) {
                     throw("the ammount of dice can't be a decimal number")
