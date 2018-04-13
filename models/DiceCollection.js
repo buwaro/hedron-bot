@@ -1,5 +1,6 @@
-const diceRegex = /(.*)d(.*)/i
 const Dice = require(__basedir + "/models/Dice")
+const diceRegex = /(.*)d(.*)/i
+const checkSpecialCharactersRegex = /№|&|±|¿|¡|;|Π|π|Ω/i
 
 class DiceCollection {
 
@@ -11,8 +12,15 @@ class DiceCollection {
 
     addDices(diceStrings) {
         for (var diceString of diceStrings) {
-            if (diceRegex.test(diceString)) {
+            if (checkSpecialCharactersRegex.test(diceString)) {
+                throw("U wot m8?!")
+            }
+            else if (diceRegex.test(diceString)) {
                 var [amount, type] = diceRegex.exec(diceString).slice(1,3)
+
+                if (isNaN(amount) && isNaN(type)){
+                    throw("Can't roll a " + diceString + ",\nPlease try something like: 1d6")
+                }
 
                 if (isNaN(amount)) {
                     throw("The amount of dice is not a number")
@@ -39,7 +47,6 @@ class DiceCollection {
                 else if (type % 1 != 0) {
                     throw("the ammount of sides can't be a decimal number")
                 }
-
             }
             else {
                 throw("Can't roll a " + diceString + ",\nPlease try something like: 1d6")

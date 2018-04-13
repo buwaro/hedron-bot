@@ -12,15 +12,25 @@ test('Throws an error when the given string is not a diceString', function (t) {
     }
 })
 
-test("Throws an error when the amount of dice is not a diceString", function (t) {
-    t.plan(1);
-    diceString = "blepd6"
+test('Throws an error when the given string is not a diceString', function (t) {
+    t.plan(2);
+    diceString = "blep"
     try {
-        const d = new DiceCollection([diceString])
+        const d = new DiceCollection()
         d.addDices([diceString])
     }
     catch(e){
-        t.is(e, "The amount of dice is not a number")
+        t.is(e, "Can't roll a " + diceString + ",\nPlease try something like: 1d6")
+    }
+
+
+    diceString = "blepdblep"
+    try {
+        const d = new DiceCollection()
+        d.addDices([diceString])
+    }
+    catch(e){
+        t.is(e, "Can't roll a " + diceString + ",\nPlease try something like: 1d6")
     }
 })
 
@@ -45,6 +55,18 @@ test("Throws an error when the amount of sides is not a number", function (t) {
     }
     catch(e){
         t.is(e, "The amount of sides is not a number")
+    }
+})
+
+test("Throws an error when the amount of dice is not a number", function (t) {
+    t.plan(1);
+    diceString = "blepd10"
+    try {
+        const d = new DiceCollection([diceString])
+        d.addDices([diceString])
+    }
+    catch(e){
+        t.is(e, "The amount of dice is not a number")
     }
 })
 
@@ -109,5 +131,16 @@ test("Throws an error when the amount of sides is a decimal number", function (t
     }
     catch(e){
         t.is(e, "the ammount of sides can't be a decimal number")
+    }
+})
+
+test("Throws an error when there are special characters", function (t) {
+    t.plan(1);
+    const d = new DiceCollection()
+    try {
+        d.addDices(["№&±¿¡;ΠπΩ"])
+    }
+    catch(e){
+        t.is(e, "U wot m8?!")
     }
 })
