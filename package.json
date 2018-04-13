@@ -1,12 +1,13 @@
 {
   "name": "HedronBot",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "This is a telegram bot that can throw dice",
   "main": "index.js",
   "scripts": {
     "test": "tape -r ./tests/test_setup.js tests/**/*.js",
     "start": "node index.js",
-    "debug": "node inspect index.js"
+    "debug": "node inspect index.js",
+    "install": "node scripts/install.js"
   },
   "keywords": [
     "telegram",
@@ -17,7 +18,12 @@
   "author": "Furexa (buwaro)",
   "license": "ISC",
   "dependencies": {
+    "shelljs": "^0.8.1",
     "tape": "^4.8.0",
     "telegraf": "^3.17.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/buwaro/hedron-bot.git"
   }
 }

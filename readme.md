@@ -73,3 +73,7 @@ If you need more info, you can follow the tutorial at https://gist.github.com/no
 - **Push changes to production:** `git push production master`
 
 > **Note:** You can start the app manually by executing `pm2 start ~/apps/hedron/index.js --name hedron` if it isn't started automatically after the deploy
+
+## Run locally
+- **Install hedron modules:** `npm install`
+- **Start hedron:** `BOT_TOKEN=[your bot token] npm start`
