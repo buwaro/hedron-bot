@@ -1,6 +1,6 @@
 {
   "name": "HedronBot",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "This is a telegram bot that can throw dice",
   "main": "index.js",
   "scripts": {
