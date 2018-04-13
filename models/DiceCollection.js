@@ -29,10 +29,10 @@ class DiceCollection {
                     amount = 1
                 }
                 else if (amount <= 0) {
-                    throw("The ammount of dice has to be higher than 0")
+                    throw("The amount of dice has to be higher than 0")
                 }
                 else if (amount % 1 != 0) {
-                    throw("the ammount of dice can't be a decimal number")
+                    throw("the amount of dice can't be a decimal number")
                 }
 
                 if (isNaN(type)) {
@@ -45,7 +45,7 @@ class DiceCollection {
                     throw("Can't roll a dice with more than " + this.maxSides + " sides")
                 }
                 else if (type % 1 != 0) {
-                    throw("the ammount of sides can't be a decimal number")
+                    throw("the amount of sides can't be a decimal number")
                 }
             }
             else {

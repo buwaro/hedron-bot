@@ -42,7 +42,7 @@ test("Throws an error when the amount of dice is negative", function (t) {
         d.addDices([diceString])
     }
     catch(e){
-        t.is(e, "The ammount of dice has to be higher than 0")
+        t.is(e, "The amount of dice has to be higher than 0")
     }
 })
 
@@ -119,7 +119,7 @@ test("Throws an error when the amount of dice is a decimal number", function (t)
         d.addDices(["1.5d10"])
     }
     catch(e){
-        t.is(e, "the ammount of dice can't be a decimal number")
+        t.is(e, "the amount of dice can't be a decimal number")
     }
 })
 
@@ -130,7 +130,7 @@ test("Throws an error when the amount of sides is a decimal number", function (t
         d.addDices(["1d5.5"])
     }
     catch(e){
-        t.is(e, "the ammount of sides can't be a decimal number")
+        t.is(e, "the amount of sides can't be a decimal number")
     }
 })
 
