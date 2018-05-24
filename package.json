@@ -20,7 +20,7 @@
   "dependencies": {
     "shelljs": "^0.8.1",
     "tape": "^4.8.0",
-    "telegraf": "^3.17.7"
+    "telegraf": "^3.21.1"
   },
   "repository": {
     "type": "git",
