@@ -4,7 +4,7 @@ global.__addonsdir = __basedir + "/addons";
 const Telegraf = require('telegraf')
 const fs = require("fs")
 
-const bot = new Telegraf(process.env.BOT_TOKEN)
+const bot = new Telegraf(process.env.BOT_TOKEN, {username: '@Hedronbot'})
 
 // require all addons
 fs.readdirSync(__addonsdir).forEach((file) => {
