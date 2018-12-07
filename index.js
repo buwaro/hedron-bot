@@ -8,9 +8,11 @@ const bot = new Telegraf(process.env.BOT_TOKEN, {username: '@Hedronbot'})
 
 // require all addons
 fs.readdirSync(__addonsdir).forEach((file) => {
-  global.__addondir = {}
-  global.__addondir[file] = __addonsdir + "/" + file
-  require(__addondir[file])(bot)
+  if(file != '.DS_Store') {
+    global.__addondir = {}
+    global.__addondir[file] = __addonsdir + "/" + file
+    require(__addondir[file])(bot)
+  }
 })
 
 bot.startPolling()

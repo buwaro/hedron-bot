@@ -9,7 +9,9 @@ if (!fs.existsSync(addonsDir)) {
 }
 else {
   fs.readdirSync("addons").forEach((file) => {
-    console.log("installing dependencies for " + file + "...")
-    shell.exec("npm install --prefix " + addonsDir + "/" + file)
+    if (file != ".DS_Store"){
+      console.log("installing dependencies for " + file + "...")
+      shell.exec("npm install --prefix " + addonsDir + "/" + file)
+    }
   })
 }
